@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kursov Proekt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+              
+  <%- include('templates/nav'); -%>
+
+
+    <!-- panel za vremeto -->
+    <div class="container">
+      <h2>Проверете текущото време</h2>
+      <form action="/" method="post">
+        <div class="form-group">
+          <label for="city">Град</label>
+          <input name="city" type="text" class="form-control"  placeholder="Въведете град" required>
+        </div>
+        <button type="submit" class="btn btn-primary" value="Get Weather" id="alertbox">Цък !</button>
+        <br><br>
+        <div><% if(weather !== null){ %>
+                  <p class="alert alert-success"><%= weather %></p>
+                <% } %>
+
+                <% if(error !== null){ %>
+                  <p class="alert alert-danger"><%= error %></p>
+                <% } %> </div>
+      </form>
+    </div>
+  </body>
+</html>
